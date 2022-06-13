@@ -5,17 +5,25 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Detail from "./pages/Details";
 import Home from './pages/Home/HomePage'
+
 
 function App() {
   return (
-    <Router>
+   
       <div>
-        <Switch>
-          <Route path="/" component={Home}/>
-        </Switch>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home}>
+            </Route>
+            <Route path="/char/:char_id" component={Detail}>
+            </Route>
+          </Switch>
+        </Router>
+        
       </div>
-    </Router>
+    
   );
 }
 
